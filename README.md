@@ -1,10 +1,26 @@
-# pytorch-jupyter-docker
+# docker-ml-base
 
-Docker & Docker-Compose files for running Pytorch & Jupyter Notebook
+Docker & Docker-Compose files for running basic machine learning tools.
 
-First, copy the Dockerfile & docker-compose file into your work directory.
+- Jupyter interface only
+- Terminal is available on the jupyter
 
-To build the image, first run:
+## Tools available on this docker
+
+- Ubuntu 16.04 based
+- Anaconda3-2019.03-Linux-x86_64
+- Pytorch & torchvision
+- Tensorflow
+- Jupyter notebook
+- Matplotlib, pandas, and so on
+- Openpyxl
+- FastText
+- Mecab, neologdn, and LANG=ja_JP.UTF-8
+- dl-cliche
+
+## Running service
+
+Build the image:
 
 > docker-compose build
 
@@ -12,8 +28,13 @@ Then run:
 
 > docker-compose up
 
-Jupyter should be running on localhost:8888
+Open localhost:8888 to start jupyter.
 
-The directory with the docker-compose file is mounted, change the mounted folder in the docker-compose file.
+## Setup details
 
-Use the Python [Default] Kernel.
+- Base folder: /data
+
+## Todos
+
+- [ ] Rename base folder
+- [ ] Fast.ai
