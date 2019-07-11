@@ -65,6 +65,22 @@ RUN apt-get update && apt-get install -y language-pack-ja-base language-pack-ja
 RUN locale-gen ja_JP.UTF-8
 ENV LANG ja_JP.UTF-8
 
+# More ML tools
+RUN apt-get install -y graphviz
+RUN pip install lightgbm
+RUN pip install seaborn
+RUN pip install fastai
+RUN pip install graphviz
+RUN pip install optuna
+RUN pip install hyperopt
+
+# Japanese fonts
+RUN wget https://ipafont.ipa.go.jp/old/ipafont/IPAfont00303.php
+RUN mv IPAfont00303.php IPAfont00303.zip
+RUN apt-get install -y unzip
+RUN unzip -q IPAfont00303.zip
+RUN mv IPAfont00303/*.ttf /usr/share/fonts/truetype/
+
 # Run jupyter
 EXPOSE 8888
 WORKDIR /data
